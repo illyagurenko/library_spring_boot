@@ -1,5 +1,7 @@
 package org.library.library_spring.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,6 +31,7 @@ public class Book {
     private int publishingYear;
 
     @ManyToOne
+    @JsonBackReference//потомок
     @JoinColumn(name = "author_id")
     private Author author;
 
