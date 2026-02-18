@@ -14,11 +14,6 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Book {
 
-    public Book(String title, int year, Author author){
-        this.title = title;
-        this.publishingYear = year;
-        this.author = author;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -28,7 +23,7 @@ public class Book {
     private String title;
 
     @Column(name = "publishing_year")
-    private int publishingYear;
+    private Integer publishingYear;
 
     @ManyToOne
     @JsonBackReference//потомок
