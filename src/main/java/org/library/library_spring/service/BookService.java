@@ -36,7 +36,7 @@ public class BookService {
         book.setPublishingYear(bookDto.getPublishingYear());
 
         Author author = authorRepository.findById(bookDto.getAuthorId())
-                .orElseThrow(() -> new RuntimeException("author not found"));
+                .orElseThrow(() -> new RuntimeException("Автор с ID " + bookDto.getAuthorId() + " не найден в библиотеке"));
         book.setAuthor(author);
         return book;
     }

@@ -1,5 +1,6 @@
 package org.library.library_spring.controller;
 
+import jakarta.validation.Valid;
 import org.library.library_spring.Dto.AuthorDto;
 import org.library.library_spring.entity.Author;
 import org.library.library_spring.repository.AuthorRepository;
@@ -29,7 +30,7 @@ public class AuthorController {
     }
 
     @PostMapping
-    public AuthorDto create(@RequestBody AuthorDto authorDto){
+    public AuthorDto create(@Valid @RequestBody AuthorDto authorDto){
         return authorService.save(authorDto);
     }
 
