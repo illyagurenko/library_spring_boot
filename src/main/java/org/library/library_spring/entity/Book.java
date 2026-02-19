@@ -26,7 +26,6 @@ public class Book {
     private Integer publishingYear;
 
     @ManyToOne
-    @JsonBackReference//потомок
     @JoinColumn(name = "author_id")
     private Author author;
 

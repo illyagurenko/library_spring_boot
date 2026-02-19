@@ -1,5 +1,6 @@
 package org.library.library_spring.controller;
 
+import org.library.library_spring.Dto.BookDto;
 import org.library.library_spring.entity.Book;
 import org.library.library_spring.service.BookService;
 import org.springframework.web.bind.annotation.*;
@@ -17,18 +18,18 @@ public class BookController {
     }
 
     @GetMapping
-    public List<Book> getAll(){
+    public List<BookDto> getAll(){
         return bookService.getAll();
     }
 
     @GetMapping("/{id}")
-    public Book getById(@PathVariable int id){
+    public BookDto getById(@PathVariable int id){
         return bookService.getBookById(id);
     }
 
     @PostMapping
-    public Book create(@RequestBody Book book){
-        return bookService.save(book);
+    public BookDto create(@RequestBody BookDto bookDto){
+        return bookService.save(bookDto);
     }
 
     @DeleteMapping("/{id}")

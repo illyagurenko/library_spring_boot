@@ -28,6 +28,5 @@ public class Author {
     private String lastName;
 
     @OneToMany(mappedBy = "author", cascade = CascadeType.ALL)
-    @JsonManagedReference//родитель
     private List<Book> books;
 }
